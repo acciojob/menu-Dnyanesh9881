@@ -76,33 +76,27 @@ const data=[
   ]
   
   const App = () => {
-    const [menu, setMenu]=useState("");
+    const [menu, setMenu] = useState("");
+  
+    const filteredData = menu !== "" ? data.filter(item => item.category === menu) : data;
+  
     return (
       <div>
         <h1>Our Menu</h1>
-        <button  id="main" onClick={()=> setMenu("")}>All</button>
-        <button data-test-id="menu-item-breakfast"  onClick={()=> setMenu("breakfast")}>Breakfast</button>
-        <button data-test-id="menu-item-lunch"  onClick={()=> setMenu("lunch")}>Lunch</button>
-        <button data-test-id="menu-item-shakes"  onClick={()=> setMenu("shakes")}>Shakes</button>
+        <button id="main" onClick={() => setMenu("")}>All</button>
+        <button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={() => setMenu("breakfast")}>Breakfast</button>
+        <button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={() => setMenu("lunch")}>Lunch</button>
+        <button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={() => setMenu("shakes")}>Shakes</button>
   
         <div>
-          { menu!=="" ? data.map(item => {
-                  if(menu===item.category){
-                    return <div key={item.id}>
-                    <img src={item.img} alt={item.title} />
-                    <h3>{item.title}</h3>
-                    <p>${item.price}</p>
-                    <p>{item.desc}</p>
-                  </div>
-                  }
-                  else return "";
-  }):   data.map(item =>(<div key={item.id}>
-      <img src={item.img} alt={item.title} />
-      <h3>{item.title}</h3>
-      <p>${item.price}</p>
-      <p>{item.desc}</p>
-    </div>))
-    }
+          {filteredData.map(item => (
+            <div key={item.id}>
+              <img src={item.img} alt={item.title} />
+              <h3>{item.title}</h3>
+              <p>${item.price}</p>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     );
