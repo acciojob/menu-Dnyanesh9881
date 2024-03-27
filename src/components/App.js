@@ -81,9 +81,9 @@ const data=[
       <div>
         <h1>Our Menu</h1>
         <button  id="main" onClick={()=> setMenu("")}>All</button>
-        <button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={()=> setMenu("breakfast")}>Breakfast</button>
-        <button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={()=> setMenu("lunch")}>Lunch</button>
-        <button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={()=> setMenu("shakes")}>Shakes</button>
+        <button data-test-id="menu-item-breakfast"  onClick={()=> setMenu("breakfast")}>Breakfast</button>
+        <button data-test-id="menu-item-lunch"  onClick={()=> setMenu("lunch")}>Lunch</button>
+        <button data-test-id="menu-item-shakes"  onClick={()=> setMenu("shakes")}>Shakes</button>
   
         <div>
           { menu!=="" ? data.map(item => {
