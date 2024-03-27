@@ -76,7 +76,7 @@ const data=[
   ]
   
   const App = () => {
-    const [menu, setMenu]=useState("shakes");
+    const [menu, setMenu]=useState("");
     return (
       <div>
         <h1>Our Menu</h1>
