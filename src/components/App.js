@@ -80,10 +80,10 @@ const data=[
     return (
       <div>
         <h1>Our Menu</h1>
-        <button onClick={()=> setMenu("")}>All</button>
-        <button onClick={()=> setMenu("breakfast")}>Breakfast</button>
-        <button onClick={()=> setMenu("lunch")}>Lunch</button>
-        <button onClick={()=> setMenu("shakes")}>Shakes</button>
+        <button id="main" onClick={()=> setMenu("")}>All</button>
+        <button id="filter-btn-1" onClick={()=> setMenu("breakfast")}>Breakfast</button>
+        <button id="filter-btn-2" onClick={()=> setMenu("lunch")}>Lunch</button>
+        <button id="filter-btn-3" onClick={()=> setMenu("shakes")}>Shakes</button>
   
         <div>
           { menu!=="" ? data.map(item => {
